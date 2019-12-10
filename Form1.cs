@@ -7,16 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-
-
+using System.IO.Ports;
 
 
 
 namespace App_Proyecto
 {
 
-   
     public partial class Form1 : Form
     {
 
@@ -30,6 +27,28 @@ namespace App_Proyecto
  
         private void Form1_Load(object sender, EventArgs e)
         {
+            
+            string[] PuertosDisponibles = SerialPort.GetPortNames();
+            comBox_Puertos.Items.Clear();
+
+            foreach (string puerto_simple in PuertosDisponibles)
+            {
+                comBox_Puertos.Items.Add(puerto_simple);
+
+            }
+            if(comBox_Puertos.Items.Count>0)
+            {
+                //Conectar_Puerto.Cursor = Cursors.Hand;
+                comBox_Puertos.SelectedIndex= 0;
+                serialPort1.BaudRate = 9600;
+                serialPort1.DataBits = 8;
+                serialPort1.Parity = Parity.None;
+                serialPort1.StopBits = StopBits.One;
+                serialPort1.Handshake = Handshake.None;
+                serialPort1.PortName = comBox_Puertos.Text;
+                MessageBox.Show(comBox_Puertos.Text);
+
+            }
 
         }
 
@@ -50,9 +69,6 @@ namespace App_Proyecto
         }
 
    
-
-
-
         private void Maxim_Click(object sender, EventArgs e)
         {
 
@@ -61,7 +77,7 @@ namespace App_Proyecto
                 this.WindowState = FormWindowState.Normal;
 
             else
-                    this.WindowState = FormWindowState.Maximized;
+                this.WindowState = FormWindowState.Maximized;
                // Maxim.Image = Image.FromFile("C:/Users/Isaia/Desktop/Maxim.png");
             
 
@@ -80,10 +96,6 @@ namespace App_Proyecto
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
-
-
-
 
         }
 
@@ -228,13 +240,13 @@ namespace App_Proyecto
 
         }
 
-        private void bunifuImageButton2_Click_1(object sender, EventArgs e)
+        private void bunifuImageButton2_Click_1(object sender, EventArgs e) //Iniciar gráfico
         {
             Bandera = 1;
        
         }
 
-        private void bunifuImageButton3_Click(object sender, EventArgs e)
+        private void bunifuImageButton3_Click(object sender, EventArgs e) //Parar gráfico
         {
             
             Bandera = 0;
@@ -244,6 +256,63 @@ namespace App_Proyecto
         {
 
         }
+
+        private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Conectar_Puerto_Click(object sender, EventArgs e)
+        {
+
+
+
+            if (serialPort1.IsOpen)
+            {
+                try
+                {
+                    serialPort1.Close();
+                    Conectar_Puerto.color = Color.Blue;
+
+                }
+                catch (Exception err)
+                {
+
+                    MessageBox.Show(err.Message.ToString());
+                }
+
+
+            }
+            else
+            {
+
+                try
+                {
+                    
+                    serialPort1.Open();
+                    Conectar_Puerto.color = Color.Coral;
+                    //MessageBox.Show(comBox_Puertos.Text);
+                }
+                catch (Exception err)
+                {
+
+                    MessageBox.Show(err.Message.ToString());
+                }
+            }
+
+
+
+        }
+
+
+
     }
+
+        
+
+            
+
+        
+    
     }
 
