@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
+using System.IO;
 
 
 
@@ -19,6 +20,8 @@ namespace App_Proyecto
 
         int Estado=0;
         int Bandera = 0;
+        string DatosRecibidos;
+
         public Form1()
         {
             InitializeComponent();
@@ -49,6 +52,12 @@ namespace App_Proyecto
                 MessageBox.Show(comBox_Puertos.Text);
 
             }
+
+
+
+
+
+
 
         }
 
@@ -145,9 +154,11 @@ namespace App_Proyecto
 
         private void Panel_Top_DoubleClick(object sender, EventArgs e)
         {
+            serialPort1.Close();
+            serialPort1.Dispose();
 
             Application.Exit();
-
+            
         }
 
         private void Panel_Top_DoubleClick_1(object sender, EventArgs e)
@@ -250,6 +261,8 @@ namespace App_Proyecto
         {
             
             Bandera = 0;
+            AdicionarInfoAlTxt();
+
         }
 
         private void chart2_Click_1(object sender, EventArgs e)
@@ -272,6 +285,7 @@ namespace App_Proyecto
                 try
                 {
                     serialPort1.Close();
+                    serialPort1.Dispose();
                     Conectar_Puerto.color = Color.Blue;
 
                 }
@@ -304,6 +318,38 @@ namespace App_Proyecto
 
         }
 
+        private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+
+            DatosRecibidos = serialPort1.ReadLine();
+
+            string rutaCompleta = @" C:\Users\Isaia\Desktop\mi archivo.txt";
+            string texto = "HOLA DE NUEVO";
+
+            using (StreamWriter file = new StreamWriter(rutaCompleta, true))
+            {
+                file.WriteLine(texto); //se agrega información al documento
+
+                file.Close();
+
+
+
+            }
+            }
+
+
+        void AdicionarInfoAlTxt()
+        {
+            string rutaCompleta = @" C:\Users\Isaia\Desktop\mi archivo.txt";
+            string texto = "HOLA DE NUEVO";
+
+            using (StreamWriter file = new StreamWriter(rutaCompleta, true))
+            {
+                file.WriteLine(texto); //se agrega información al documento
+
+                file.Close();
+            }
+        }
 
 
     }
