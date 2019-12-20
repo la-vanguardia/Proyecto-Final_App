@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
 using System.IO;
+using Newtonsoft.Json;
+
 
 
 
@@ -20,7 +22,7 @@ namespace App_Proyecto
 
         int Estado=0;
         int Bandera = 0;
-        string DatosRecibidos;
+        public string DatosRecibidos;
 
         public Form1()
         {
@@ -30,28 +32,20 @@ namespace App_Proyecto
  
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-            string[] PuertosDisponibles = SerialPort.GetPortNames();
-            comBox_Puertos.Items.Clear();
+            ConfigurarUART();
 
-            foreach (string puerto_simple in PuertosDisponibles)
-            {
-                comBox_Puertos.Items.Add(puerto_simple);
+            string json = @"{
+                               'CPU': 'Intel',
+                               'PSU': '500W',
+                               'Drives': [
+                                 'DVD read/writer'
+                                 /*(broken)*/,
+                                 '500 gigabyte hard drive',
+                                 '200 gigabype hard drive'
+                               ]
+                            }";
 
-            }
-            if(comBox_Puertos.Items.Count>0)
-            {
-                //Conectar_Puerto.Cursor = Cursors.Hand;
-                comBox_Puertos.SelectedIndex= 0;
-                serialPort1.BaudRate = 9600;
-                serialPort1.DataBits = 8;
-                serialPort1.Parity = Parity.None;
-                serialPort1.StopBits = StopBits.One;
-                serialPort1.Handshake = Handshake.None;
-                serialPort1.PortName = comBox_Puertos.Text;
-                MessageBox.Show(comBox_Puertos.Text);
-
-            }
+            JsonObjeto(json);
 
 
 
@@ -61,9 +55,9 @@ namespace App_Proyecto
 
         }
 
-  
 
-    
+        #region No se usa
+
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -81,21 +75,7 @@ namespace App_Proyecto
         private void Maxim_Click(object sender, EventArgs e)
         {
 
-            if (this.WindowState == FormWindowState.Maximized) 
-
-                this.WindowState = FormWindowState.Normal;
-
-            else
-                this.WindowState = FormWindowState.Maximized;
-               // Maxim.Image = Image.FromFile("C:/Users/Isaia/Desktop/Maxim.png");
             
-
-            if (this.WindowState == FormWindowState.Maximized)
-            {
-                //Maxim.Image = Image.FromFile("C:/Users/Isaia/Desktop/Minimized.png");
-
-
-            }
         }
 
         private void Cerrar_Click(object sender, EventArgs e)
@@ -112,6 +92,19 @@ namespace App_Proyecto
         {
 
         }
+
+        private void chart2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+        #endregion
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
@@ -137,6 +130,8 @@ namespace App_Proyecto
 
         private void Cerrar_Click_1(object sender, EventArgs e)
         {
+            serialPort1.Close();
+            serialPort1.Dispose();
             Application.Exit();
         }
 
@@ -154,22 +149,16 @@ namespace App_Proyecto
 
         private void Panel_Top_DoubleClick(object sender, EventArgs e)
         {
-            serialPort1.Close();
-            serialPort1.Dispose();
+            
 
-            Application.Exit();
+         
             
         }
 
         private void Panel_Top_DoubleClick_1(object sender, EventArgs e)
         {
-            if (this.WindowState == FormWindowState.Maximized)
+            Maxim();
 
-                this.WindowState = FormWindowState.Normal;
-
-            else
-                this.WindowState = FormWindowState.Maximized;
-           
         }
 
         private void bunifuImageButton2_Click(object sender, EventArgs e)
@@ -190,23 +179,13 @@ namespace App_Proyecto
         private void tableLayoutPanel1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
 
-            if (this.WindowState == FormWindowState.Maximized)
-
-                this.WindowState = FormWindowState.Normal;
-
-            else
-                this.WindowState = FormWindowState.Maximized;
+            Maxim();
 
         }
 
         private void pictureBox2_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (this.WindowState == FormWindowState.Maximized)
-
-                this.WindowState = FormWindowState.Normal;
-
-            else
-                this.WindowState = FormWindowState.Maximized;
+            Maxim();
         }
 
         private void chart1_Click(object sender, EventArgs e)
@@ -227,27 +206,7 @@ namespace App_Proyecto
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-            if (Bandera == 1)
-            {
-
-                var seed = Environment.TickCount;
-                var random = new Random(seed);
-
-                var value = random.Next(0, 50);
-                var value2 = random.Next(10, 50);
-
-
-
-                this.chart2.Series["Series1"].Points.AddXY(value, value2);
-
-                this.chart2.Series["Series1"].Color = Color.Red;
-
-
-                this.chart2.Series["Series2"].Points.AddXY(value + 10, value2 + 20);
-
-                this.chart2.Series["Series2"].Color = Color.Green;
-                
-            }
+            FuncionGraficar();
 
         }
 
@@ -265,19 +224,91 @@ namespace App_Proyecto
 
         }
 
-        private void chart2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
+        
 
         private void Conectar_Puerto_Click(object sender, EventArgs e)
         {
+            ConexionUART();
 
+        }
+
+        private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+
+            DatosRecibidos = serialPort1.ReadLine();
+            
+
+            string json = @"{
+             'CPU': 'Intel',
+                'PSU': '500W',
+                'Drives': [
+                 'DVD read/writer'
+                 /*(broken)*/,
+                 '500 gigabyte hard drive',
+                 '200 gigabype hard drive'
+                                        ]
+                                            }";
+
+            JsonObjeto(json);
+
+            Console.WriteLine(DatosRecibidos);
+            
+
+        }
+
+
+        void AdicionarInfoAlTxt()
+        {
+            string rutaCompleta = @" D:\Isaias\Escritorio\mi archivo.txt";
+            string texto = "HOLA DE NUEVO";
+
+            using (StreamWriter file = new StreamWriter(rutaCompleta, true))
+            {
+                file.WriteLine(texto); //se agrega información al documento
+
+                file.Close();
+            }
+        }
+
+
+        void Clasificar (string DatosSeparados)
+        {
+         
+
+
+        }
+
+        void ConfigurarUART()
+        {
+
+            string[] PuertosDisponibles = SerialPort.GetPortNames();
+            comBox_Puertos.Items.Clear();
+
+            foreach (string puerto_simple in PuertosDisponibles)
+            {
+                comBox_Puertos.Items.Add(puerto_simple);
+
+            }
+            if (comBox_Puertos.Items.Count > 0)
+            {
+                
+                comBox_Puertos.SelectedIndex = 0;
+                serialPort1.BaudRate = 19200;
+                serialPort1.DataBits = 8;
+                serialPort1.Parity = Parity.None;
+                serialPort1.StopBits = StopBits.One;
+                serialPort1.Handshake = Handshake.None;
+                serialPort1.PortName = comBox_Puertos.Text;
+
+
+
+            }
+
+
+        }
+
+        void ConexionUART()
+        {
 
 
             if (serialPort1.IsOpen)
@@ -302,8 +333,10 @@ namespace App_Proyecto
 
                 try
                 {
-                    
+
                     serialPort1.Open();
+                    serialPort1.DiscardOutBuffer();
+                    serialPort1.DiscardInBuffer();
                     Conectar_Puerto.color = Color.Coral;
                     //MessageBox.Show(comBox_Puertos.Text);
                 }
@@ -316,49 +349,82 @@ namespace App_Proyecto
 
 
 
+
+
+
+
         }
 
-        private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        void FuncionGraficar()
         {
 
-            DatosRecibidos = serialPort1.ReadLine();
-
-            string rutaCompleta = @" C:\Users\Isaia\Desktop\mi archivo.txt";
-            string texto = "HOLA DE NUEVO";
-
-            using (StreamWriter file = new StreamWriter(rutaCompleta, true))
+            if (Bandera == 1)
             {
-                file.WriteLine(texto); //se agrega información al documento
 
-                file.Close();
+                var seed = Environment.TickCount;
+                var random = new Random(seed);
+
+                var value = random.Next(0, 50);
+                var value2 = random.Next(10, 50);
 
 
+                for (double i=0; i < 10; i=i+0.20)
+                {
+                   
+                    this.chart2.Series["Series1"].Points.AddXY(i, 1);
+
+
+
+                    this.chart2.Series["Series1"].Color = Color.Red;
+
+                   
+                }
+
+                
+
+
+                this.chart2.Series["Series2"].Points.AddXY(10.1, 1);
+
+                this.chart2.Series["Series2"].Color = Color.Green;
 
             }
-            }
 
 
-        void AdicionarInfoAlTxt()
-        {
-            string rutaCompleta = @" C:\Users\Isaia\Desktop\mi archivo.txt";
-            string texto = "HOLA DE NUEVO";
 
-            using (StreamWriter file = new StreamWriter(rutaCompleta, true))
-            {
-                file.WriteLine(texto); //se agrega información al documento
 
-                file.Close();
-            }
         }
 
+        void Maxim()
+        {
 
+            if (this.WindowState == FormWindowState.Maximized)
+
+                this.WindowState = FormWindowState.Normal;
+
+            else
+                this.WindowState = FormWindowState.Maximized;
+
+
+
+
+        }
+
+        void JsonObjeto(string json)
+        {
+
+            var JDatos = JsonConvert.DeserializeObject<dynamic>(json);
+
+            Console.WriteLine(JDatos.CPU);
+
+
+        }
     }
 
-        
 
-            
+   
 
-        
-    
-    }
+
+
+
+}
 

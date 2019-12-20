@@ -39,3 +39,29 @@ D:\Isaias\Documents\Facultad\Facultad\Facultad\Diseño de Sistemas con Microcont
 D:\Isaias\Documents\Facultad\Facultad\Facultad\Diseño de Sistemas con Microcontroladores\Proyecto Final\Proyecto-Final_App\bin\Debug\Bunifu_UI_v1.5.3.dll
 D:\Isaias\Documents\Facultad\Facultad\Facultad\Diseño de Sistemas con Microcontroladores\Proyecto Final\Proyecto-Final_App\obj\Debug\aa-ET\App_Proyecto.resources.dll
 D:\Isaias\Documents\Facultad\Facultad\Facultad\Diseño de Sistemas con Microcontroladores\Proyecto Final\Proyecto-Final_App\obj\Debug\App_Proyecto.csproj.CopyComplete
+C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\App_Proyecto.exe.config
+C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\App_Proyecto.exe
+C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\App_Proyecto.pdb
+C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\aa-ET\App_Proyecto.resources.dll
+C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\obj\Debug\App_Proyecto.csprojAssemblyReference.cache
+C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\obj\Debug\App_Proyecto.Form1.resources
+C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\obj\Debug\App_Proyecto.Properties.Resources.resources
+C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\obj\Debug\App_Proyecto.Form1.aa-ET.resources
+C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\obj\Debug\App_Proyecto.csproj.GenerateResource.cache
+C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\obj\Debug\aa-ET\App_Proyecto.resources.dll
+C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\obj\Debug\App_Proyecto.csproj.CopyComplete
+C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\obj\Debug\App_Proyecto.exe
+C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\obj\Debug\App_Proyecto.pdb
+C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\LiveCharts.dll
+C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\LiveCharts.pdb
+C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\LiveCharts.xml
+C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\Newtonsoft.Json.Schema.dll
+C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\Newtonsoft.Json.Schema.xml
