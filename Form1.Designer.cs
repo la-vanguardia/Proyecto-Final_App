@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.Cerrar = new Bunifu.Framework.UI.BunifuImageButton();
             this.Panel_Lateral = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.comBox_Puertos = new System.Windows.Forms.ComboBox();
-            this.Conectar_Puerto = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -50,12 +50,14 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.Parar_grafico = new Bunifu.Framework.UI.BunifuImageButton();
             this.Graficar = new Bunifu.Framework.UI.BunifuImageButton();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.ConectarPuerto = new Bunifu.Framework.UI.BunifuThinButton2();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cerrar)).BeginInit();
             this.Panel_Lateral.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -93,12 +95,19 @@
             resources.ApplyResources(this.Panel_Lateral, "Panel_Lateral");
             this.Panel_Lateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(18)))), ((int)(((byte)(25)))));
             this.Panel_Lateral.CausesValidation = false;
-            this.Panel_Lateral.Controls.Add(this.pictureBox1, 1, 1);
-            this.Panel_Lateral.Controls.Add(this.comBox_Puertos, 2, 1);
-            this.Panel_Lateral.Controls.Add(this.Conectar_Puerto, 2, 2);
+            this.Panel_Lateral.Controls.Add(this.tableLayoutPanel4, 1, 1);
+            this.Panel_Lateral.Controls.Add(this.ConectarPuerto, 1, 2);
             this.Panel_Lateral_Animate.SetDecoration(this.Panel_Lateral, BunifuAnimatorNS.DecorationType.None);
             this.Panel_Lateral.Name = "Panel_Lateral";
             this.Panel_Lateral.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Lateral_Paint);
+            // 
+            // tableLayoutPanel4
+            // 
+            resources.ApplyResources(this.tableLayoutPanel4, "tableLayoutPanel4");
+            this.tableLayoutPanel4.Controls.Add(this.pictureBox1, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.comBox_Puertos, 1, 0);
+            this.Panel_Lateral_Animate.SetDecoration(this.tableLayoutPanel4, BunifuAnimatorNS.DecorationType.None);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             // 
             // pictureBox1
             // 
@@ -119,23 +128,6 @@
             this.comBox_Puertos.Name = "comBox_Puertos";
             this.comBox_Puertos.TabStop = false;
             this.comBox_Puertos.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // Conectar_Puerto
-            // 
-            this.Conectar_Puerto.BackColor = System.Drawing.Color.SeaGreen;
-            this.Conectar_Puerto.color = System.Drawing.Color.SeaGreen;
-            this.Conectar_Puerto.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.Conectar_Puerto.Cursor = System.Windows.Forms.Cursors.No;
-            this.Panel_Lateral_Animate.SetDecoration(this.Conectar_Puerto, BunifuAnimatorNS.DecorationType.None);
-            resources.ApplyResources(this.Conectar_Puerto, "Conectar_Puerto");
-            this.Conectar_Puerto.ForeColor = System.Drawing.Color.White;
-            this.Conectar_Puerto.Image = ((System.Drawing.Image)(resources.GetObject("Conectar_Puerto.Image")));
-            this.Conectar_Puerto.ImagePosition = 20;
-            this.Conectar_Puerto.ImageZoom = 50;
-            this.Conectar_Puerto.LabelPosition = 41;
-            this.Conectar_Puerto.LabelText = "Conectar";
-            this.Conectar_Puerto.Name = "Conectar_Puerto";
-            this.Conectar_Puerto.Click += new System.EventHandler(this.Conectar_Puerto_Click);
             // 
             // bunifuDragControl1
             // 
@@ -228,15 +220,6 @@
             this.Graficar.Zoom = 10;
             this.Graficar.Click += new System.EventHandler(this.bunifuImageButton2_Click_1);
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // serialPort1
-            // 
-            this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
-            // 
             // chart2
             // 
             this.chart2.BackColor = System.Drawing.Color.Transparent;
@@ -301,6 +284,37 @@
             this.chart2.Series.Add(series4);
             this.chart2.Click += new System.EventHandler(this.chart2_Click_1);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // serialPort1
+            // 
+            this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
+            // 
+            // ConectarPuerto
+            // 
+            this.ConectarPuerto.ActiveBorderThickness = 1;
+            this.ConectarPuerto.ActiveCornerRadius = 20;
+            this.ConectarPuerto.ActiveFillColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ConectarPuerto.ActiveForecolor = System.Drawing.Color.White;
+            this.ConectarPuerto.ActiveLineColor = System.Drawing.Color.White;
+            this.ConectarPuerto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(18)))), ((int)(((byte)(25)))));
+            resources.ApplyResources(this.ConectarPuerto, "ConectarPuerto");
+            this.ConectarPuerto.ButtonText = "CONECTAR";
+            this.ConectarPuerto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Panel_Lateral_Animate.SetDecoration(this.ConectarPuerto, BunifuAnimatorNS.DecorationType.None);
+            this.ConectarPuerto.ForeColor = System.Drawing.Color.SeaGreen;
+            this.ConectarPuerto.IdleBorderThickness = 1;
+            this.ConectarPuerto.IdleCornerRadius = 20;
+            this.ConectarPuerto.IdleFillColor = System.Drawing.Color.Transparent;
+            this.ConectarPuerto.IdleForecolor = System.Drawing.Color.White;
+            this.ConectarPuerto.IdleLineColor = System.Drawing.Color.White;
+            this.ConectarPuerto.Name = "ConectarPuerto";
+            this.ConectarPuerto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ConectarPuerto.Click += new System.EventHandler(this.ConectarPuerto_Click);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -316,6 +330,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cerrar)).EndInit();
             this.Panel_Lateral.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -346,8 +361,9 @@
         private Bunifu.Framework.UI.BunifuImageButton Graficar;
         private Bunifu.Framework.UI.BunifuImageButton Parar_grafico;
         private System.IO.Ports.SerialPort serialPort1;
-        private Bunifu.Framework.UI.BunifuTileButton Conectar_Puerto;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private Bunifu.Framework.UI.BunifuThinButton2 ConectarPuerto;
     }
 }
 

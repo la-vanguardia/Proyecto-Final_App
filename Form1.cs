@@ -317,7 +317,7 @@ namespace App_Proyecto
                 {
                     serialPort1.Close();
                     serialPort1.Dispose();
-                    Conectar_Puerto.color = Color.Blue;
+                    ConectarPuerto.ButtonText = "CONECTAR";
 
                 }
                 catch (Exception err)
@@ -337,7 +337,8 @@ namespace App_Proyecto
                     serialPort1.Open();
                     serialPort1.DiscardOutBuffer();
                     serialPort1.DiscardInBuffer();
-                    Conectar_Puerto.color = Color.Coral;
+                    ConectarPuerto.ButtonText = "DESCONECTAR";
+
                     //MessageBox.Show(comBox_Puertos.Text);
                 }
                 catch (Exception err)
@@ -417,6 +418,11 @@ namespace App_Proyecto
             Console.WriteLine(JDatos.CPU);
 
 
+        }
+
+        private void ConectarPuerto_Click(object sender, EventArgs e)
+        {
+            ConexionUART();
         }
     }
 

@@ -52,15 +52,6 @@ C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\obj\Debug\aa-ET\App
 C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\obj\Debug\App_Proyecto.csproj.CopyComplete
 C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\obj\Debug\App_Proyecto.exe
 C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\obj\Debug\App_Proyecto.pdb
-C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\LiveCharts.dll
-C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\LiveCharts.WinForms.dll
-C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\LiveCharts.Wpf.dll
-C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\LiveCharts.pdb
-C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\LiveCharts.xml
-C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\LiveCharts.WinForms.pdb
-C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\LiveCharts.WinForms.xml
-C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\LiveCharts.Wpf.pdb
-C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\LiveCharts.Wpf.xml
 C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\Newtonsoft.Json.Schema.dll
 C:\Users\Isaia\Source\Repos\la-vanguardia\Proyecto-Final_App\bin\Debug\Newtonsoft.Json.xml

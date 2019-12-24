@@ -36,52 +36,7 @@
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>C:\Users\Isaia\Desktop\BUNIFU UI\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
-    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
-      <HintPath>packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
-    </Reference>
-    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
-      <HintPath>packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
-      <HintPath>packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Nevron.Nov.Barcode, Version=17.5.29.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad, processorArchitecture=MSIL">
-      <HintPath>packages\Nevron.Nov.Chart.17.5.29.12\lib\net40\Nevron.Nov.Barcode.dll</HintPath>
-    </Reference>
-    <Reference Include="Nevron.Nov.Chart, Version=17.5.29.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad, processorArchitecture=MSIL">
-      <HintPath>packages\Nevron.Nov.Chart.17.5.29.12\lib\net40\Nevron.Nov.Chart.dll</HintPath>
-    </Reference>
-    <Reference Include="Nevron.Nov.Diagram, Version=17.5.29.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad, processorArchitecture=MSIL">
-      <HintPath>packages\Nevron.Nov.Chart.17.5.29.12\lib\net40\Nevron.Nov.Diagram.dll</HintPath>
-    </Reference>
-    <Reference Include="Nevron.Nov.Grid, Version=17.5.29.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad, processorArchitecture=MSIL">
-      <HintPath>packages\Nevron.Nov.Chart.17.5.29.12\lib\net40\Nevron.Nov.Grid.dll</HintPath>
-    </Reference>
-    <Reference Include="Nevron.Nov.Host.WinBase, Version=17.5.29.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad, processorArchitecture=MSIL">
-      <HintPath>packages\Nevron.Nov.Chart.17.5.29.12\lib\net40\Nevron.Nov.Host.WinBase.dll</HintPath>
-    </Reference>
-    <Reference Include="Nevron.Nov.Host.WinForm, Version=17.5.29.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad, processorArchitecture=MSIL">
-      <HintPath>packages\Nevron.Nov.Chart.17.5.29.12\lib\net40\Nevron.Nov.Host.WinForm.dll</HintPath>
-    </Reference>
-    <Reference Include="Nevron.Nov.Host.Wpf, Version=17.5.29.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad, processorArchitecture=MSIL">
-      <HintPath>packages\Nevron.Nov.Chart.17.5.29.12\lib\net40\Nevron.Nov.Host.Wpf.dll</HintPath>
-    </Reference>
-    <Reference Include="Nevron.Nov.Presentation, Version=17.5.29.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad, processorArchitecture=MSIL">
-      <HintPath>packages\Nevron.Nov.Chart.17.5.29.12\lib\net40\Nevron.Nov.Presentation.dll</HintPath>
-    </Reference>
-    <Reference Include="Nevron.Nov.Schedule, Version=17.5.29.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad, processorArchitecture=MSIL">
-      <HintPath>packages\Nevron.Nov.Chart.17.5.29.12\lib\net40\Nevron.Nov.Schedule.dll</HintPath>
-    </Reference>
-    <Reference Include="Nevron.Nov.Text, Version=17.5.29.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad, processorArchitecture=MSIL">
-      <HintPath>packages\Nevron.Nov.Chart.17.5.29.12\lib\net40\Nevron.Nov.Text.dll</HintPath>
-    </Reference>
-    <Reference Include="Nevron.Nov.WinFormControls, Version=17.5.29.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad, processorArchitecture=MSIL">
-      <HintPath>packages\Nevron.Nov.Chart.17.5.29.12\lib\net40\Nevron.Nov.WinFormControls.dll</HintPath>
-    </Reference>
-    <Reference Include="Nevron.Nov.WpfControls, Version=17.5.29.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad, processorArchitecture=MSIL">
-      <HintPath>packages\Nevron.Nov.Chart.17.5.29.12\lib\net40\Nevron.Nov.WpfControls.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
