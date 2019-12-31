@@ -23,6 +23,7 @@ namespace App_Proyecto
         int Estado=0;
         int Bandera = 0;
         public string DatosRecibidos;
+        public string DataOUT;
 
         public Form1()
         {
@@ -372,11 +373,11 @@ namespace App_Proyecto
                 for (double i=0; i < 10; i=i+0.20)
                 {
                    
-                    this.chart2.Series["Series1"].Points.AddXY(i, 1);
+                    this.chart9.Series["Series1"].Points.AddXY(i, 1);
 
 
 
-                    this.chart2.Series["Series1"].Color = Color.Red;
+                    this.chart9.Series["Series1"].Color = Color.Red;
 
                    
                 }
@@ -384,9 +385,9 @@ namespace App_Proyecto
                 
 
 
-                this.chart2.Series["Series2"].Points.AddXY(10.1, 1);
+                this.chart9.Series["Series2"].Points.AddXY(10.1, 1);
 
-                this.chart2.Series["Series2"].Color = Color.Green;
+                this.chart9.Series["Series2"].Color = Color.Green;
 
             }
 
@@ -423,6 +424,26 @@ namespace App_Proyecto
         private void ConectarPuerto_Click(object sender, EventArgs e)
         {
             ConexionUART();
+        }
+
+
+        void EnviarUART (string DataOUT)
+        {
+
+            serialPort1.WriteLine(DataOUT);
+
+        }
+
+        private void Minimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+            
+
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 
