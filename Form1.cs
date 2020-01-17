@@ -23,7 +23,7 @@ namespace App_Proyecto
         int Estado=0;
         int Bandera = 0;
         public string DatosRecibidos;
-        public string DataOUT;
+        
 
         public Form1()
         {
@@ -34,6 +34,10 @@ namespace App_Proyecto
         private void Form1_Load(object sender, EventArgs e)
         {
             ConfigurarUART();
+            PasoBox.Text = "1";
+            AlturaBox.Text = "1";
+            RepeticionesBox.Text = "1";
+        
 
             string json = @"{
                                'CPU': 'Intel',
@@ -213,15 +217,20 @@ namespace App_Proyecto
 
         private void bunifuImageButton2_Click_1(object sender, EventArgs e) //Iniciar gráfico
         {
+            EnviarUART("Start");
+           
+            labelTempRestR.Visible = true;
+
             Bandera = 1;
        
         }
 
         private void bunifuImageButton3_Click(object sender, EventArgs e) //Parar gráfico
         {
-            
+
+            EnviarUART("Stop");
             Bandera = 0;
-            AdicionarInfoAlTxt();
+            
 
         }
 
@@ -430,7 +439,12 @@ namespace App_Proyecto
         void EnviarUART (string DataOUT)
         {
 
-            serialPort1.WriteLine(DataOUT);
+
+            string JsonOUT = DataOUT + ',' + PasoBox.Text + ',' + AlturaBox.Text + ',' + RepeticionesBox.Text;
+
+            Console.WriteLine(JsonOUT);
+
+            //serialPort1.WriteLine(JsonOUT);
 
         }
 
@@ -442,6 +456,26 @@ namespace App_Proyecto
         }
 
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
         {
 
         }
